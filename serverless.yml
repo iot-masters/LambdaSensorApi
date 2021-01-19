@@ -1,0 +1,20 @@
+service: lambdaapipy
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+  versionFunctions: false
+  memorySize: 128
+
+  region: us-east-1
+
+
+functions:
+  SensorValues:
+    handler: handler.SensorValues
+    events:
+      - http:
+          path: testing/SensorValues
+          method: any
